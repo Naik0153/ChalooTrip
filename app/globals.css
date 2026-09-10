@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 15, 23, 42;
+  --background-start-rgb: 248, 250, 252;
+  --background-end-rgb: 241, 245, 249;
+  color-scheme: light;
+}
+
+html.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 8, 12, 22;
+  --background-end-rgb: 11, 15, 25;
+  color-scheme: dark;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #f8fafc;
+  min-height: 100vh;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+html.dark body {
+  background: #090d16;
+  color: #ffffff;
+}
+
+/* 21st.dev Glassmorphism Design Tokens - Full Light & Dark Theme Support */
+@layer components {
+  .glass-panel {
+    @apply backdrop-blur-xl bg-white/90 dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800/90 shadow-lg shadow-slate-900/[0.03] dark:shadow-black/40 text-slate-900 dark:text-white transition-all duration-300;
+  }
+  .glass-panel-subtle {
+    @apply backdrop-blur-md bg-white/70 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm text-slate-900 dark:text-white transition-all duration-300;
+  }
+  .glass-card {
+    @apply backdrop-blur-lg bg-white/80 dark:bg-slate-800/80 hover:bg-white dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700/60 shadow-sm hover:shadow-md hover:shadow-slate-900/[0.05] dark:hover:shadow-black/30 text-slate-900 dark:text-white transition-all duration-200;
+  }
+  .glass-card-hover {
+    @apply hover:border-red-500/30 dark:hover:border-red-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200;
+  }
+  .glass-input {
+    @apply backdrop-blur-md bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:bg-white dark:focus:bg-slate-900 focus:border-red-500 focus:ring-4 focus:ring-red-500/10 transition-all duration-200;
+  }
+  .glass-pill {
+    @apply backdrop-blur-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 transition-all duration-200;
+  }
+  .glass-badge-red {
+    @apply backdrop-blur-md bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-900/60 text-red-600 dark:text-red-400 font-semibold;
+  }
+  .glass-badge-green {
+    @apply backdrop-blur-md bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900/60 text-emerald-700 dark:text-emerald-400 font-semibold;
+  }
+  .glass-badge-blue {
+    @apply backdrop-blur-md bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-900/60 text-blue-700 dark:text-blue-400 font-semibold;
+  }
+  .glass-badge-amber {
+    @apply backdrop-blur-md bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900/60 text-amber-700 dark:text-amber-400 font-semibold;
+  }
+}
+
+/* Smooth Fluid Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.6);
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
+}

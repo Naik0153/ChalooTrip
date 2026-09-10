@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": "user-1789067755541",
+      "name": "kemet46531",
+      "email": "kemet46531@94an.com",
+      "phone": "678765678769",
+      "createdAt": "2026-09-10T19:15:55.541Z",
+      "verified": true,
+      "otpVerified": true,
+      "passwordHash": "sivaji@0153"
+    }
+  ],
+  "bookings": [],
+  "emergencyAlerts": []
+}
